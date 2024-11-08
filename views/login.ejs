@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <% if(message.length>0){ %>
+        <div class="flex flex-col max-w-lg mx-auto">
+            <div class="flex inline-flex justify-between bg-red-100 border border-red-400 text-red-700 px-4 py-3 my-2 rounded "
+                role="alert">
+                <span class="block sm:inline pl-2">
+                    <strong class="font-bold">
+                        <%= message %>
+                    </strong>
+                </span>
+                <span class="inline" onclick="return this.parentNode.remove();">
+                    <svg class="fill-current h-6 w-6" role="button" xmlns="#" viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                            d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <% } %>
+
+            <section>
+                <!-- Container -->
+                <div class="grid md:h-screen md:grid-cols-2">
+                    <!-- Component -->
+                    <div class="flex flex-col items-center justify-center bg-white">
+                        <!-- Wrapper -->
+                        <div class="max-w-lg px-5 py-16 text-center md:px-10 md:py-24 lg:py-32">
+                            <!-- Title -->
+                            <h2 class="mb-8 text-3xl font-bold md:mb-12 md:text-5xl">Login</h2>
+                            <!-- Form -->
+                            <form action="/user/login" class="mx-auto mb-4 max-w-sm pb-4" name="wf-form-password"
+                                method="post">
+                                <div class="relative">
+                                    <img alt=""
+                                        src="https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f190b7e37f878_EnvelopeSimple.svg"
+                                        class="absolute bottom-0 left-[5%] right-auto top-[26%] inline-block" />
+                                    <input type="email"
+                                        class="mb-4 block h-9 w-full border border-black bg-[#f2f2f7] px-3 py-6 pl-14 text-sm text-[#333333]"
+                                        maxlength="256" name="email" placeholder="Email Address" required="" />
+                                </div>
+                                <div class="relative mb-4">
+                                    <img alt=""
+                                        src="https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f19601037f879_Lock-2.svg"
+                                        class="absolute bottom-0 left-[5%] right-auto top-[26%] inline-block" />
+                                    <input type="password"
+                                        class="mb-4 block h-9 w-full border border-black bg-[#f2f2f7] px-3 py-6 pl-14 text-sm text-[#333333]"
+                                        name="password" placeholder="Password (min 8 characters)" required="" />
+                                </div>
+                                <!-- Сheckbox -->
+                                <label class="mb-6 flex items-center pb-12 font-medium lg:mb-1">
+                                    <input type="checkbox" name="checkbox" />
+                                    <span class="ml-4 inline-block cursor-pointer text-sm" for="checkbox">I agree with
+                                        the <a href="#" class="font-bold text-[#0b0b1f]">Terms &amp; Conditions</a>
+                                    </span>
+                                </label>
+                                <!-- Button -->
+                                <button type="submit"
+                                    class="flex items-center justify-center bg-[#276ef1] px-8 py-4 text-center font-semibold text-white transition [box-shadow:rgb(171,_196,_245)_-8px_8px] hover:[box-shadow:rgb(171,_196,_245)_0px_0px]">
+                                    <p class="mr-6 font-bold">Join</p>
+                                    <svg class="h-4 w-4 flex-none" fill="currentColor" viewBox="0 0 20 21" xmlns="#">
+                                        <title>Arrow Right</title>
+                                        <polygon
+                                            points="16.172 9 10.101 2.929 11.515 1.515 20 10 19.293 10.707 11.515 18.485 10.101 17.071 16.172 11 0 11 0 9">
+                                        </polygon>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Component -->
+                    <div class="flex flex-col items-center justify-center bg-[#f2f2f7]">
+                        <!-- Wrapper -->
+                        <div class="max-w-lg px-5 py-16 md:px-10 md:py-24 lg:py-32">
+                            <div
+                                class="mb-6 ml-2 flex h-14 w-14 items-center justify-center bg-[#276ef1] [box-shadow:rgb(171,_196,_245)_-8px_8px]">
+                                <img src="https://assets.website-files.com/6357722e2a5f19121d37f84d/6358f5ec37c8c32b17d1c725_Vector-9.svg"
+                                    alt="" class="inline-block" />
+                            </div>
+                            <p class="mb-8 text-[#647084] md:mb-12 lg:mb-16">Building the backbone of digital
+                                experiences,
+                                keeping everything running smoothly and efficiently.</p>
+                            <p class="font-bold">Anshu Yadav</p>
+                            <p class="text-sm">Backend Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</body>
+
+</html>
